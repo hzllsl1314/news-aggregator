@@ -1,0 +1,7 @@
+streamlit==1.15.0
+altair==4.2.0
+pandas
+plost
+requests
+matplotlib
+seaborn
