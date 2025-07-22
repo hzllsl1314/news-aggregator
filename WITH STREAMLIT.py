@@ -67,14 +67,14 @@ def json_to_articles(data, url): #track useful information from json
                 "url_ultima_versi_format_html"
             ])
             # NEW: if the value we just picked is still empty, look inside the nested dict
-            if not link:  # ← add from here …
+            if not link: 
                 for k in ("format_html", "url_es_formato_html",
                           "url_ultima_versi_format_html"):
                     if k in node and isinstance(node[k], dict):
                         inner = node[k].get("url")
                         if isinstance(inner, str):
                             link = inner
-                            break  # ← … down to here
+                            break  
             date = pick([
                 "published_at", "date", "created_at", "timestamp", "data_publicacio",
                 "data_del_document",  # ca: Data del document
@@ -106,7 +106,7 @@ st.set_page_config(
     layout="wide"
 )
 
-class NewsMonitor: #create the class (the recipe, definitions are like ingredients)
+class NewsMonitor: #create the class 
     def __init__(self):
         self.urls, self.keywords = _load_state()
         self.found_articles = set()  # To avoid duplicate alerts
